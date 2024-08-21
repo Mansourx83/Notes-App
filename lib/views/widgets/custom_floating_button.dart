@@ -38,6 +38,9 @@ class ModelBottomWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SingleChildScrollView(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
         child: Column(
           children: [
             const SizedBox(
@@ -54,11 +57,11 @@ class ModelBottomWidget extends StatelessWidget {
               maxLines: 6,
             ),
             const SizedBox(
-              height: 28,
+              height: 32,
             ),
             CustomButton(),
-            SizedBox(
-              height: 16,
+            const SizedBox(
+              height: 24,
             ),
           ],
         ),
