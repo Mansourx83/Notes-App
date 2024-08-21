@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/custom_textfiled.dart';
 
 class CustomFloatingButton extends StatelessWidget {
@@ -21,7 +22,7 @@ class CustomFloatingButton extends StatelessWidget {
           },
         );
       },
-      backgroundColor: Colors.cyanAccent,
+      backgroundColor: const Color.fromARGB(255, 81, 214, 183),
       // shape: CircleBorder(),
       child: const Icon(
         Icons.add,
@@ -36,22 +37,31 @@ class ModelBottomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 40,
-          ),
-          CustomStyledTextField(
-            labelText: 'Title',
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          CustomStyledTextField(
-            labelText: 'Content',
-            maxLines: 6,
-          )
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 40,
+            ),
+            CustomStyledTextField(
+              labelText: 'Title',
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomStyledTextField(
+              labelText: 'Content',
+              maxLines: 6,
+            ),
+            const SizedBox(
+              height: 28,
+            ),
+            CustomButton(),
+            SizedBox(
+              height: 16,
+            ),
+          ],
+        ),
       ),
     );
   }
