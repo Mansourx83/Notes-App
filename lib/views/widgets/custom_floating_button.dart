@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/widgets/custom_textfiled.dart';
 
 class CustomFloatingButton extends StatelessWidget {
   const CustomFloatingButton({
@@ -33,6 +34,25 @@ class CustomFloatingButton extends StatelessWidget {
 class ModelBottomWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 40,
+          ),
+          CustomStyledTextField(
+            labelText: 'Title',
+          ),
+          SizedBox(
+            height: 16,
+          ),
+          CustomStyledTextField(
+            labelText: 'Content',
+            maxLines: 6,
+          )
+        ],
+      ),
+    );
   }
 }
