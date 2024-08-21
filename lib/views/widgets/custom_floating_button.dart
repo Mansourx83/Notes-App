@@ -10,6 +10,10 @@ class CustomFloatingButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
+          backgroundColor: const Color.fromARGB(255, 37, 35, 35),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
           context: context,
           builder: (context) {
             return ModelBottomWidget();
