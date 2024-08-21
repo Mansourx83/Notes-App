@@ -52,7 +52,7 @@ class NoteItem extends StatelessWidget {
                 fontSize: 14,
               ),
             ),
-          )
+          ),
         ],
       ),
     );
