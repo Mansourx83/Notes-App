@@ -29,7 +29,7 @@ class NoteItem extends StatelessWidget {
               child: Text(
                 'Build your career with Mans',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 19,
                   color: Colors.black.withOpacity(0.4),
                 ),
               ),
