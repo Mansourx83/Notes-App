@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 25,
-            color: Colors.white,
+            color: Colors.tealAccent,
           ),
         ),
         IconBox(

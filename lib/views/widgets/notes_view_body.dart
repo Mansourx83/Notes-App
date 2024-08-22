@@ -19,6 +19,7 @@ class NotesViewBody extends StatelessWidget {
               icon: Icon(
                 Icons.search_sharp,
                 size: 30,
+                color: Colors.tealAccent,
               ),
             ),
             Expanded(
