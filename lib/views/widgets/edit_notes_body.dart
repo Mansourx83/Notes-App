@@ -34,7 +34,7 @@ class EditNotesBody extends StatelessWidget {
               height: 24,
             ),
             CustomStyledTextField(
-              labelText: 'Content',
+              labelText: 'Contents',
               maxLines: 6,
             ),
           ],
