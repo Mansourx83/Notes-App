@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/custom_textfiled.dart';
+import 'package:notes_app/views/widgets/model_bottom_sheet.dart';
 
 class CustomFloatingButton extends StatelessWidget {
   const CustomFloatingButton({
@@ -27,44 +28,6 @@ class CustomFloatingButton extends StatelessWidget {
       child: const Icon(
         Icons.add,
         color: Colors.black,
-      ),
-    );
-  }
-}
-
-class ModelBottomWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            CustomStyledTextField(
-              labelText: 'Title',
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            CustomStyledTextField(
-              labelText: 'Content',
-              maxLines: 6,
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            CustomButton(),
-            const SizedBox(
-              height: 24,
-            ),
-          ],
-        ),
       ),
     );
   }

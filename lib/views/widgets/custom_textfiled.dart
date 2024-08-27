@@ -3,18 +3,25 @@ import 'package:flutter/material.dart';
 class CustomStyledTextField extends StatelessWidget {
   final String labelText;
   final int maxLines;
-  final Function(String)? onChanged;
+  final Function(String?)? onsaved;
 
   CustomStyledTextField({
     required this.labelText,
-    this.onChanged,
     this.maxLines = 1,
+    this.onsaved,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      onChanged: onChanged,
+    return TextFormField(
+      onSaved: onsaved,
+      validator: (value) {
+        if (value?.isEmpty ?? true) {
+          return 'Field is required';
+        } else {
+          return null;
+        }
+      },
       style: const TextStyle(
         color: Colors.tealAccent,
       ),
