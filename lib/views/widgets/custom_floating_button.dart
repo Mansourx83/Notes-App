@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/custom_textfiled.dart';
-import 'package:notes_app/views/widgets/model_bottom_sheet.dart';
+import 'package:notes_app/views/widgets/add_note_bottom_sheet.dart';
 
 class CustomFloatingButton extends StatelessWidget {
   const CustomFloatingButton({
@@ -19,7 +19,7 @@ class CustomFloatingButton extends StatelessWidget {
           ),
           context: context,
           builder: (context) {
-            return ModelBottomWidget();
+            return AddNoteBottomSheet();
           },
         );
       },

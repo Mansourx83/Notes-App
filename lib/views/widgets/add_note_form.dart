@@ -2,21 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/custom_textfiled.dart';
 
-class ModelBottomWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: SingleChildScrollView(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
-        child: NoteForm(),
-      ),
-    );
-  }
-}
-
 class NoteForm extends StatefulWidget {
   const NoteForm({
     super.key,
