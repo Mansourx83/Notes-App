@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/custom_textfiled.dart';
+
+DateTime now = DateTime.now();
+
+DateFormat formatter = DateFormat('yyyy-MM-dd HH:mm');
 
 class NoteForm extends StatefulWidget {
   const NoteForm({
@@ -58,7 +63,7 @@ class _NoteFormState extends State<NoteForm> {
                       title: title!,
                       subtitle: subTitle!,
                       color: Colors.blue.value,
-                      data: DateTime.now().toString(),
+                      data: formatter.format(now),
                     );
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                   } else {
