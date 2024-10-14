@@ -4,16 +4,19 @@ class CustomStyledTextField extends StatelessWidget {
   final String labelText;
   final int maxLines;
   final Function(String?)? onsaved;
+  final Function(String)? onchanged;
 
   CustomStyledTextField({
     required this.labelText,
     this.maxLines = 1,
     this.onsaved,
+    this.onchanged,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onchanged,
       onSaved: onsaved,
       validator: (value) {
         if (value?.isEmpty ?? true) {

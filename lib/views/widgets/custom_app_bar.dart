@@ -6,9 +6,11 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.title,
     required this.icon,
+    required this.fun,
   });
   final String title;
   final Icon icon;
+  final VoidCallback fun;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +25,7 @@ class CustomAppBar extends StatelessWidget {
         ),
         IconBox(
           icon: icon,
-          function: () {},
+          function: fun,
         ),
       ],
     );

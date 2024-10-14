@@ -19,23 +19,24 @@ class _NotesViewBodyState extends State<NotesViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
             CustomAppBar(
               title: 'Notes',
-              icon: Icon(
+              icon: const Icon(
                 Icons.search_sharp,
                 size: 30,
                 color: Colors.tealAccent,
               ),
+              fun: () {},
             ),
-            Expanded(
+            const Expanded(
               child: ListNotes(),
             ),
           ],
