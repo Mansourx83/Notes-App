@@ -12,8 +12,8 @@ class ColorItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return isActive
         ? CircleAvatar(
-            backgroundColor: Colors.tealAccent,
-            radius: 40,
+            backgroundColor: Colors.white,
+            radius: 38,
             child: CircleAvatar(
               backgroundColor: color,
               radius: 33,
@@ -21,7 +21,7 @@ class ColorItem extends StatelessWidget {
           )
         : CircleAvatar(
             backgroundColor: color,
-            radius: 40,
+            radius: 38,
           );
   }
 }
@@ -36,14 +36,13 @@ class ColorList extends StatefulWidget {
 class _ColorListState extends State<ColorList> {
   int currentIndex = 0;
 
-  List<Color> colors = [
-    Colors.white,
-    Colors.cyan,
-    Colors.amber,
-    Colors.purple,
-    Colors.grey,
-    Colors.blueGrey,
-    const Color(0xFF98FF98),
+  List<Color> customPalette = [
+    Colors.greenAccent[400]!,
+    Colors.amber[500]!,
+    Colors.cyan[300]!,
+    Colors.purple[600]!,
+    Colors.grey[400]!,
+    Colors.blueGrey[800]!,
   ];
   @override
   Widget build(BuildContext context) {
@@ -52,7 +51,7 @@ class _ColorListState extends State<ColorList> {
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.all(4),
-        itemCount: colors.length,
+        itemCount: customPalette.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return GestureDetector(
@@ -62,7 +61,7 @@ class _ColorListState extends State<ColorList> {
             },
             child: ColorItem(
               isActive: currentIndex == index,
-              color: colors[index],
+              color: customPalette[index],
             ),
           );
         },
