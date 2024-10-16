@@ -21,55 +21,57 @@ class _EditNotesBodyState extends State<EditNotesBody> {
   String? title, content;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 24,
-            ),
-            CustomAppBar(
-              title: 'Edit Note',
-              icon: const Icon(
-                Icons.check,
-                size: 30,
-                color: Colors.tealAccent,
+    return SingleChildScrollView(
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 24,
               ),
-              fun: () {
-                widget.note.title = title ?? widget.note.title;
-                widget.note.subtitle = content ?? widget.note.subtitle;
-                widget.note.save();
-                BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-                Navigator.pop(context);
-              },
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            CustomStyledTextField(
-              labelText: widget.note.title,
-              onchanged: (value) {
-                title = value;
-              },
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            CustomStyledTextField(
-              labelText: widget.note.subtitle,
-              maxLines: 6,
-              onchanged: (value) {
-                content = value;
-              },
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            EditNoteColorsList(
-              note: widget.note,
-            ),
-          ],
+              CustomAppBar(
+                title: 'Edit Note',
+                icon: const Icon(
+                  Icons.check,
+                  size: 30,
+                  color: Colors.tealAccent,
+                ),
+                fun: () {
+                  widget.note.title = title ?? widget.note.title;
+                  widget.note.subtitle = content ?? widget.note.subtitle;
+                  widget.note.save();
+                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                  Navigator.pop(context);
+                },
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              CustomStyledTextField(
+                labelText: widget.note.title,
+                onchanged: (value) {
+                  title = value;
+                },
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              CustomStyledTextField(
+                labelText: widget.note.subtitle,
+                maxLines: 6,
+                onchanged: (value) {
+                  content = value;
+                },
+              ),
+              const SizedBox(
+                height: 24,
+              ),
+              EditNoteColorsList(
+                note: widget.note,
+              ),
+            ],
+          ),
         ),
       ),
     );
